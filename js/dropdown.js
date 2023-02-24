@@ -2,6 +2,7 @@ console.log("jeg er i dropdown")
 const fruits = []
 
 // vi laver objekter og ligger den ned i arrayet med push
+// Vi angiver en primary key, navn, og en style vi senere kan bruge til at ændre style
 fruits.push({"id" : 1, "name":"æble", "style":"fruit"})
 fruits.push({"id" : 2, "name": "pære", "style" : "fruit"})
 fruits.push({"id" : 3, "name": "peanut", "style" : "nut"})
@@ -23,6 +24,10 @@ function addFruitToDropDown(item) {
     // el.value = item.id
 
     el.value = item
+
+    // item.style ligger direkte i objekterne. Nu kan vi lave vores CSS,
+    // da vi har sagt at hvert fruit element's classe navn = deres style
+    el.className = item.style
 }
 
 function fillDropDown() {
